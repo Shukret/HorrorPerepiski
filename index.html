@@ -135,14 +135,12 @@
                             .then((data) => { 
                               if (data.keys) 
                               {
-                                  console.log("LOAD");
                                   console.log(data.keys[0].value);
                                   myGameInstance.SendMessage('Init', 'SetPlayerData', data.keys[0].value);
                               }
                             })
                             .catch((error) => {
                               // Ошибка
-                              console.log("LOAD ERROR");
                               console.log(error);
                             });
                             loadingBar.style.display = "none";
