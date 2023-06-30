@@ -135,8 +135,12 @@
                             .then((data) => { 
                               if (data.keys) 
                               {
+                                  console.log("LOAD");
                                   console.log(data.keys[0].value);
-                                  myGameInstance.SendMessage('Init', 'SetPlayerData', data.keys[0].value);
+                                  if (data.keys[0].value != null)
+                                      myGameInstance.SendMessage('Init', 'SetPlayerData', data.keys[0].value);
+                                  else
+                                    myGameInstance.SendMessage('Init', 'FirstLoadVK');
                               }
                             })
                             .catch((error) => {
