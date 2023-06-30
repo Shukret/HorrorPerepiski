@@ -138,9 +138,14 @@
                                   console.log("LOAD");
                                   console.log(data.keys[0].value);
                                   if (data.keys[0].value != null)
+                                  {
                                       myGameInstance.SendMessage('Init', 'SetPlayerData', data.keys[0].value);
+                                  }
                                   else
+                                  {
+                                    console.log("First load");
                                     myGameInstance.SendMessage('Init', 'FirstLoadVK');
+                                  }
                               }
                             })
                             .catch((error) => {
