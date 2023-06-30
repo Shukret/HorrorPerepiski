@@ -137,9 +137,8 @@
                               {
                                   console.log("LOAD");
                                   console.log(data.keys[0].value);
-                                  if (data.keys[0].value !== null)
+                                  if (data.keys[0].value !== null && data.keys[0].value != '')
                                   {
-                                    console.log(isEmpty(data.keys[0].value));
                                       myGameInstance.SendMessage('Init', 'SetPlayerData', data.keys[0].value);
                                   }
                                   else
